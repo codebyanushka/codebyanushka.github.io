@@ -29,12 +29,11 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
 
-/* ─── NAV ─── */
+/* NAV */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   height:60px;
@@ -43,6 +42,7 @@ nav{
   background:rgba(250,250,249,0.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
+  transition:box-shadow .2s;
 }
 .nav-logo{font-family:var(--serif);font-size:1.15rem;color:var(--ink);letter-spacing:-.3px}
 .nav-links{display:flex;gap:2rem;list-style:none}
@@ -52,10 +52,10 @@ nav{
 .nav-dot{width:6px;height:6px;border-radius:50%;background:#4caf50;flex-shrink:0;animation:blink 2.5s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ─── LAYOUT ─── */
+/* LAYOUT */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 3rem}
 
-/* ─── HERO ─── */
+/* HERO */
 #hero{
   padding:140px 0 80px;
   border-bottom:1px solid var(--border);
@@ -81,7 +81,7 @@ nav{
 .hero-bg-text{position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:22vw;color:transparent;-webkit-text-stroke:1px rgba(0,0,0,.04);pointer-events:none;line-height:1;z-index:0;user-select:none}
 @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
-/* ─── SECTION BASE ─── */
+/* SECTION BASE */
 section{border-bottom:1px solid var(--border)}
 .section-inner{max-width:var(--max);margin:0 auto;padding:5rem 3rem}
 .section-header{display:grid;grid-template-columns:220px 1fr;gap:4rem;align-items:baseline;margin-bottom:3.5rem}
@@ -89,12 +89,12 @@ section{border-bottom:1px solid var(--border)}
 .section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);letter-spacing:-.02em;line-height:1.15}
 .section-title em{font-style:italic;color:var(--gold)}
 
-/* ─── REVEAL ─── */
+/* REVEAL */
 .r{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .r.in{opacity:1;transform:none}
 .r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}.r.d4{transition-delay:.32s}
 
-/* ─── ABOUT ─── */
+/* ABOUT */
 .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-p{font-size:.97rem;line-height:1.85;color:var(--ink2);font-weight:300;margin-bottom:1.2rem}
 .about-p strong{color:var(--ink);font-weight:500}
@@ -106,7 +106,7 @@ section{border-bottom:1px solid var(--border)}
 .card-title{font-size:.97rem;font-weight:500;color:var(--ink);margin-bottom:.45rem;line-height:1.4}
 .card-body{font-size:.88rem;color:var(--ink3);line-height:1.65;font-weight:300}
 
-/* ─── SKILLS ─── */
+/* SKILLS */
 #skills{background:var(--surface)}
 .skills-table{width:100%;border-collapse:collapse}
 .skills-table tr{border-bottom:1px solid var(--border)}
@@ -118,15 +118,13 @@ section{border-bottom:1px solid var(--border)}
 .sk{font-size:.8rem;padding:.3rem .7rem;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--ink2);transition:all .2s;font-weight:400}
 .sk:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 
-/* ─── EXPERIENCE ─── */
+/* EXPERIENCE */
 .exp-row{display:grid;grid-template-columns:220px 1fr;gap:4rem;padding:2.8rem 0;border-bottom:1px solid var(--border)}
 .exp-row:last-child{border-bottom:none}
-.exp-side{}
 .exp-co{font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
 .exp-period{font-family:var(--mono);font-size:.7rem;color:var(--ink3);letter-spacing:.06em;margin-bottom:.5rem}
 .exp-loc{font-size:.8rem;color:var(--ink3);margin-bottom:.8rem}
 .badge{display:inline-block;font-family:var(--mono);font-size:.62rem;padding:.3rem .65rem;background:var(--gold-light);color:var(--gold);border:1px solid #d4b97a;border-radius:4px;letter-spacing:.06em;text-transform:uppercase}
-.exp-main{}
 .exp-role{font-family:var(--serif);font-size:1.7rem;color:var(--ink);letter-spacing:-.02em;line-height:1.2;margin-bottom:.3rem}
 .exp-type{font-size:.8rem;color:var(--ink3);margin-bottom:1.5rem}
 .exp-list{list-style:none}
@@ -134,7 +132,7 @@ section{border-bottom:1px solid var(--border)}
 .exp-list li::before{content:'';position:absolute;left:0;top:.7em;width:5px;height:1px;background:var(--border2)}
 .exp-list li strong{color:var(--ink);font-weight:500}
 
-/* ─── PROJECTS ─── */
+/* PROJECTS */
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
 .proj-card{background:var(--bg);padding:2.2rem 2rem;transition:background .2s;position:relative;display:flex;flex-direction:column}
 .proj-card.wide{grid-column:span 2}
@@ -147,8 +145,9 @@ section{border-bottom:1px solid var(--border)}
 .pt{font-family:var(--mono);font-size:.67rem;padding:.25rem .55rem;background:var(--surface);border:1px solid var(--border);border-radius:3px;color:var(--ink3)}
 .proj-link{font-size:.78rem;font-weight:500;color:var(--ink);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s}
 .proj-link:hover{gap:.7rem}
+.proj-link + .proj-link{margin-left:1.2rem}
 
-/* ─── CONTACT ─── */
+/* CONTACT */
 #contact{border-bottom:none}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
 .contact-hl{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);color:var(--ink);letter-spacing:-.02em;line-height:1.2;margin-bottom:1rem}
@@ -162,12 +161,12 @@ section{border-bottom:1px solid var(--border)}
 .cl-label{font-family:var(--mono);font-size:.65rem;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.15rem}
 .cl-val{font-size:.88rem;font-weight:500;color:var(--ink)}
 
-/* ─── FOOTER ─── */
+/* FOOTER */
 footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
 .f-name{font-family:var(--serif);font-size:1rem;color:var(--ink)}
 .f-info{font-family:var(--mono);font-size:.68rem;color:var(--ink3);letter-spacing:.06em}
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:0 1.5rem}
   .nav-links{display:none}
@@ -208,21 +207,21 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
   <div class="hero-bg-text">AT</div>
   <div class="hero-grid">
     <div>
-      <div class="hero-eyebrow">B.Tech CSE (AI/ML) · Delhi NCR · 2027</div>
-      <h1 class="hero-name">Full-Stack<br>Developer &<br><em>AI Engineer</em></h1>
+      <div class="hero-eyebrow">B.Tech CSE (AI/ML) · Delhi NCR · Class of 2027</div>
+      <h1 class="hero-name">I don't wait<br>to graduate.<br><em>I ship.</em></h1>
       <p class="hero-desc">
-        I build <strong>production-grade software</strong> — from mobile apps with 150+ enterprise users to 7-model AI ensembles achieving 96% diagnostic accuracy. Currently seeking roles where engineering rigour and product impact intersect.
+        <strong>Full-Stack Developer & AI Engineer</strong> — from Flutter apps with 150+ enterprise users to 7-model AI ensembles hitting 96% diagnostic accuracy. Real software. Real users. Real impact.
       </p>
       <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="mailto:codebyanushka@gmail.com" class="btn-secondary">Contact Me</a>
+        <a href="#projects" class="btn-primary">See the Work</a>
+        <a href="mailto:codebyanushka@gmail.com" class="btn-secondary">Let's Talk</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="stat-grid">
         <div class="stat-cell">
           <div class="stat-n">2</div>
-          <div class="stat-l">Apps on<br>Play Store</div>
+          <div class="stat-l">Apps Live on<br>Play Store</div>
         </div>
         <div class="stat-cell">
           <div class="stat-n">150+</div>
@@ -230,11 +229,11 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
         </div>
         <div class="stat-cell">
           <div class="stat-n">96%</div>
-          <div class="stat-l">AI Model<br>Accuracy</div>
+          <div class="stat-l">AI Diagnostic<br>Accuracy</div>
         </div>
         <div class="stat-cell">
-          <div class="stat-n">7x</div>
-          <div class="stat-l">Model<br>Ensemble</div>
+          <div class="stat-n">99.9%</div>
+          <div class="stat-l">Production<br>Uptime</div>
         </div>
       </div>
     </div>
@@ -246,39 +245,43 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
   <div class="section-inner">
     <div class="section-header r">
       <div class="section-tag">01 — About</div>
-      <h2 class="section-title">Who I <em>Am</em></h2>
+      <h2 class="section-title">Built different.<br><em>Shipped early.</em></h2>
     </div>
     <div class="about-layout">
       <div>
-        <p class="about-p r">I am a <strong>final-year B.Tech student in Computer Science (AI/ML)</strong>, graduating in 2027. What sets me apart is that I do not wait to graduate before shipping real software.</p>
-        <p class="about-p r d1">During my internship at <strong>Motivus Innovation</strong>, I led the end-to-end development of Xpensure — an expense management platform now used by the entire organisation. I handled everything from Flutter frontend to Django REST backend, AWS infrastructure, and Play Store deployment.</p>
-        <p class="about-p r d2">I specialise in the full stack: <strong>beautiful, performant frontends</strong> paired with <strong>scalable backends and AI systems</strong>. My current focus is on applied ML — building ensemble models, working with LLMs, and deploying computer vision systems to production.</p>
+        <p class="about-p r">Most students build for their professors. I build for <strong>real users</strong>. As a final-year B.Tech student in Computer Science (AI/ML), I've already shipped two Android apps to the Play Store, led production infrastructure for 150+ employees, and architected AI systems that actually work outside a notebook.</p>
+        <p class="about-p r d1">At <strong>Motivus Innovation</strong>, I didn't just intern — I owned it. End-to-end delivery of Xpensure: Flutter frontend, Django REST backend, AWS EC2 infrastructure, CI/CD pipeline with zero-downtime releases, and a notification system serving the entire organisation via AWS SNS & SES.</p>
+        <p class="about-p r d2">My edge is the <strong>full stack, end to end</strong> — beautiful mobile UIs, scalable backends, and AI systems that go from idea to production. Currently deep in applied ML: ensemble models, RAG pipelines, LLM engineering, and computer vision deployed to real devices.</p>
         <div class="about-chips r d3">
           <span class="chip">Flutter</span>
           <span class="chip">Django REST</span>
+          <span class="chip">FastAPI</span>
           <span class="chip">AWS</span>
           <span class="chip">LLM Engineering</span>
+          <span class="chip">RAG Pipelines</span>
           <span class="chip">Computer Vision</span>
           <span class="chip">PostgreSQL</span>
+          <span class="chip">Redis</span>
           <span class="chip">Docker</span>
           <span class="chip">React</span>
+          <span class="chip">Next.js</span>
         </div>
       </div>
       <div>
         <div class="card r d1">
           <div class="card-label">Award — 2026</div>
           <div class="card-title">Outstanding Contributor, Motivus Innovation</div>
-          <div class="card-body">Recognised for driving Xpensure's org-wide adoption and delivering a production system as part of a two-person engineering team.</div>
+          <div class="card-body">Recognised for driving Xpensure's org-wide adoption and delivering a production system as part of a two-person engineering team. Not bad for an intern.</div>
         </div>
         <div class="card r d2">
           <div class="card-label">Milestone</div>
-          <div class="card-title">2 Apps live on Google Play Store</div>
-          <div class="card-body">Published Xpensure and Yourstylie as a final-year student — both built, tested, and shipped independently to real users.</div>
+          <div class="card-title">2 live Android apps. Still a student.</div>
+          <div class="card-body">Xpensure and Yourstylie — designed, built, tested, and shipped to Google Play Store independently. Not side projects. Production software.</div>
         </div>
         <div class="card r d3">
-          <div class="card-label">Research</div>
-          <div class="card-title">14–18 pp accuracy gain via ensemble methods</div>
-          <div class="card-body">Dermacam's 7-model parallel ensemble (majority voting) achieves 93–96% vs 78–82% single-model baseline across 4 AI platforms.</div>
+          <div class="card-label">Research Outcome</div>
+          <div class="card-title">+15 percentage points via ensemble methods</div>
+          <div class="card-body">Dermacam's 7-model parallel ensemble achieves 93–96% accuracy vs 78–82% single-model baseline — using concurrent execution and majority voting across 4 AI platforms.</div>
         </div>
       </div>
     </div>
@@ -290,38 +293,38 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
   <div class="section-inner">
     <div class="section-header r">
       <div class="section-tag">02 — Skills</div>
-      <h2 class="section-title">Technical <em>Stack</em></h2>
+      <h2 class="section-title">The full <em>stack.</em><br>End to end.</h2>
     </div>
     <table class="skills-table r">
       <tr>
         <td>Frontend & Mobile</td>
         <td>Interfaces</td>
-        <td><div class="skills-bar-row"><span class="sk">Flutter</span><span class="sk">React</span><span class="sk">HTML / CSS / JS</span><span class="sk">Firebase Hosting</span><span class="sk">Dart</span></div></td>
+        <td><div class="skills-bar-row"><span class="sk">Flutter</span><span class="sk">React</span><span class="sk">Next.js</span><span class="sk">HTML / CSS / JS</span><span class="sk">TypeScript</span><span class="sk">Dart</span></div></td>
       </tr>
       <tr>
         <td>Backend</td>
         <td>Systems</td>
-        <td><div class="skills-bar-row"><span class="sk">Django REST</span><span class="sk">Flask</span><span class="sk">PostgreSQL</span><span class="sk">Nginx</span><span class="sk">AWS EC2</span><span class="sk">AWS SNS / SES</span></div></td>
+        <td><div class="skills-bar-row"><span class="sk">Django REST</span><span class="sk">FastAPI</span><span class="sk">Flask</span><span class="sk">PostgreSQL</span><span class="sk">Redis</span><span class="sk">Nginx</span><span class="sk">Gunicorn</span><span class="sk">AWS EC2</span><span class="sk">AWS SNS / SES</span></div></td>
       </tr>
       <tr>
         <td>AI & Machine Learning</td>
         <td>Intelligence</td>
-        <td><div class="skills-bar-row"><span class="sk">LLM Prompting</span><span class="sk">Claude API</span><span class="sk">Groq Llama 4</span><span class="sk">HuggingFace</span><span class="sk">Model Ensemble</span></div></td>
+        <td><div class="skills-bar-row"><span class="sk">LLM Prompt Engineering</span><span class="sk">RAG Pipelines</span><span class="sk">Multi-Model Ensemble</span><span class="sk">Claude API</span><span class="sk">Groq Llama 4</span><span class="sk">HuggingFace</span></div></td>
       </tr>
       <tr>
         <td>Computer Vision</td>
         <td>Vision</td>
-        <td><div class="skills-bar-row"><span class="sk">TensorFlow</span><span class="sk">OpenCV</span><span class="sk">Roboflow</span><span class="sk">YOLO</span></div></td>
+        <td><div class="skills-bar-row"><span class="sk">TensorFlow</span><span class="sk">OpenCV</span><span class="sk">Roboflow</span><span class="sk">YOLO</span><span class="sk">CNN</span></div></td>
       </tr>
       <tr>
         <td>Cloud & DevOps</td>
         <td>Infrastructure</td>
-        <td><div class="skills-bar-row"><span class="sk">AWS</span><span class="sk">Docker</span><span class="sk">Firebase</span><span class="sk">CI/CD</span><span class="sk">Git</span></div></td>
+        <td><div class="skills-bar-row"><span class="sk">AWS</span><span class="sk">Docker</span><span class="sk">GitHub Actions</span><span class="sk">CI/CD</span><span class="sk">Firebase</span><span class="sk">Git</span></div></td>
       </tr>
       <tr>
         <td>Languages</td>
         <td>Fluent</td>
-        <td><div class="skills-bar-row"><span class="sk">Python</span><span class="sk">Dart</span><span class="sk">JavaScript</span><span class="sk">SQL</span></div></td>
+        <td><div class="skills-bar-row"><span class="sk">Python</span><span class="sk">Dart</span><span class="sk">TypeScript</span><span class="sk">JavaScript</span><span class="sk">SQL</span></div></td>
       </tr>
     </table>
   </div>
@@ -332,7 +335,7 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
   <div class="section-inner">
     <div class="section-header r">
       <div class="section-tag">03 — Experience</div>
-      <h2 class="section-title">Where I've <em>Worked</em></h2>
+      <h2 class="section-title">Where I've <em>shipped.</em></h2>
     </div>
     <div class="exp-row r">
       <div class="exp-side">
@@ -343,12 +346,13 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
       </div>
       <div class="exp-main">
         <div class="exp-role">Full-Stack Developer Intern</div>
-        <div class="exp-type">6-month internship · 2-person engineering team</div>
+        <div class="exp-type">6 months · 2-person engineering team · org-wide delivery</div>
         <ul class="exp-list">
-          <li>Delivered <strong>Xpensure</strong> end-to-end — an expense management platform that eliminated 100% of manual workflows for 150+ employees across the organisation</li>
-          <li>Architected a cross-platform system: Android application (Google Play Store) + web dashboard (Firebase Hosting) + SuperAdmin portal for organisation-wide reporting and approvals</li>
-          <li>Managed production infrastructure on <strong>AWS EC2</strong>, configured Nginx reverse proxy, and built a scalable notification pipeline using <strong>AWS SNS and SES</strong></li>
-          <li>Maintained <strong>99.9% uptime</strong> across all surfaces; owned deployments, incident response, and iterative feature releases throughout the engagement</li>
+          <li>Killed <strong>100% of manual expense workflows</strong> for 150+ employees by architecting and shipping Xpensure — Flutter + Django REST + PostgreSQL, running on AWS EC2 with Nginx/Gunicorn</li>
+          <li>Built a true cross-platform system: <strong>Android app</strong> (Play Store) + <strong>web dashboard</strong> (Firebase Hosting) + <strong>SuperAdmin portal</strong> for org-wide reporting, approvals, and user management</li>
+          <li>Reduced deployment risk to zero with an <strong>end-to-end CI/CD pipeline</strong> (GitHub Actions) — automated unit tests, zero-downtime releases, every time</li>
+          <li>Scaled real-time notifications and transactional emails org-wide via <strong>AWS SNS & SES</strong></li>
+          <li>Maintained <strong>99.9% uptime</strong> across all surfaces — owned deployments, incident response, and every feature release end to end</li>
         </ul>
       </div>
     </div>
@@ -360,17 +364,17 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
   <div class="section-inner">
     <div class="section-header r">
       <div class="section-tag">04 — Projects</div>
-      <h2 class="section-title">Selected <em>Work</em></h2>
+      <h2 class="section-title">Things I built<br><em>and shipped.</em></h2>
     </div>
     <div class="proj-grid r">
 
       <div class="proj-card wide">
         <div class="proj-idx">Project 01 — Flagship</div>
         <div class="proj-name">Dermacam</div>
-        <div class="proj-sub">AI Dermatology Platform — 93–96% diagnostic accuracy</div>
-        <p class="proj-desc">Built a 7-model parallel ensemble across 4 AI platforms (HuggingFace, Roboflow, Groq, custom TF). Majority voting with confidence weighting pushes accuracy to 93–96% vs 78–82% single-model baseline — a 14–18 percentage point improvement. Designed for accessibility in resource-limited clinical settings.</p>
+        <div class="proj-sub">AI Dermatology Platform · 93–96% diagnostic accuracy · Built for 1.17 lakh people per dermatologist</div>
+        <p class="proj-desc">India has 1 dermatologist per 1.17 lakh people. Dermacam is built for everyone else. A 7-model parallel ensemble across 4 AI platforms (Groq, HuggingFace, Roboflow, custom TensorFlow) — running concurrently via Python's <code style="font-family:var(--mono);font-size:.8em;background:var(--surface);padding:.1rem .35rem;border-radius:3px">concurrent.futures</code> with majority voting. Accuracy: 93–96% vs 78–82% single-model baseline. Redis caching delivers 2ms cache-hit response. Hinglish Voice AI makes it accessible to rural, non-English speaking users. Ships as a Flutter Android app + PWA.</p>
         <div class="proj-tech">
-          <span class="pt">Flask</span><span class="pt">Groq Llama 4</span><span class="pt">HuggingFace</span><span class="pt">Roboflow</span><span class="pt">TensorFlow</span><span class="pt">Model Ensemble</span>
+          <span class="pt">Flask</span><span class="pt">Groq Llama 4</span><span class="pt">HuggingFace</span><span class="pt">Roboflow</span><span class="pt">TensorFlow</span><span class="pt">Redis</span><span class="pt">Flutter</span><span class="pt">Model Ensemble</span><span class="pt">Hinglish Voice AI</span>
         </div>
         <a href="https://github.com/codebyanushka" target="_blank" class="proj-link">View on GitHub &rarr;</a>
       </div>
@@ -378,10 +382,10 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
       <div class="proj-card">
         <div class="proj-idx">Project 02</div>
         <div class="proj-name">Xpensure</div>
-        <div class="proj-sub">Enterprise Expense Management · Live</div>
-        <p class="proj-desc">Production platform deployed at Motivus Innovation — 150+ active users, zero manual workflows. Android app + web dashboard + SuperAdmin portal. Built solo in 6 months.</p>
+        <div class="proj-sub">Enterprise Expense Management · Live · 150+ Users</div>
+        <p class="proj-desc">Not a demo. Not a mockup. A production platform running at Motivus Innovation — 150+ active employees, zero manual workflows, 99.9% uptime. Android app + web dashboard + SuperAdmin portal. Built as a team of two in 6 months.</p>
         <div class="proj-tech">
-          <span class="pt">Flutter</span><span class="pt">Django REST</span><span class="pt">AWS EC2</span><span class="pt">PostgreSQL</span>
+          <span class="pt">Flutter</span><span class="pt">Django REST</span><span class="pt">AWS EC2</span><span class="pt">PostgreSQL</span><span class="pt">CI/CD</span>
         </div>
         <a href="https://xpensureweb.web.app" target="_blank" class="proj-link">Live Demo &rarr;</a>
       </div>
@@ -389,10 +393,10 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
       <div class="proj-card">
         <div class="proj-idx">Project 03</div>
         <div class="proj-name">Yourstylie</div>
-        <div class="proj-sub">AI Personal Styling · Play Store</div>
-        <p class="proj-desc">Sole developer. AI outfit recommendations via computer vision — analyses wardrobe by category, colour, occasion, and preference. Live on Google Play Store.</p>
+        <div class="proj-sub">AI Personal Styling · Live on Play Store · Solo-built</div>
+        <p class="proj-desc">Sole developer, zero team, no safety net. An AI outfit recommendation engine with a real computer vision pipeline — analyses wardrobe by category, colour, occasion, and preference. Firebase Auth, encrypted data transit, GDPR-compliant deletion. Live on Google Play Store.</p>
         <div class="proj-tech">
-          <span class="pt">Flutter</span><span class="pt">Django REST</span><span class="pt">Computer Vision</span><span class="pt">PostgreSQL</span>
+          <span class="pt">Flutter</span><span class="pt">Django REST</span><span class="pt">Computer Vision</span><span class="pt">PostgreSQL</span><span class="pt">AWS EC2</span><span class="pt">Firebase Auth</span>
         </div>
         <a href="https://github.com/codebyanushka" target="_blank" class="proj-link">View on GitHub &rarr;</a>
       </div>
@@ -406,12 +410,12 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
   <div class="section-inner">
     <div class="section-header r">
       <div class="section-tag">05 — Contact</div>
-      <h2 class="section-title">Get in <em>Touch</em></h2>
+      <h2 class="section-title">Got a hard<br><em>problem?</em></h2>
     </div>
     <div class="contact-layout">
       <div>
-        <h3 class="contact-hl r">Open to <em>opportunities</em> and interesting conversations</h3>
-        <p class="contact-sub r d1">Whether it is a full-time role, internship, research collaboration, or a challenging problem worth solving — I would love to hear from you. Also exploring graduate programmes in Germany for 2027.</p>
+        <h3 class="contact-hl r">I build things that <em>actually work.</em></h3>
+        <p class="contact-sub r d1">Open to full-time roles, internships, research collaborations, and problems worth solving. If you're building something ambitious — in AI, mobile, or full-stack — let's talk.</p>
         <a href="mailto:codebyanushka@gmail.com" class="btn-primary r d2" style="display:inline-block">Send an Email</a>
       </div>
       <div class="contact-links">
@@ -458,18 +462,16 @@ footer{padding:1.8rem 3rem;display:flex;justify-content:space-between;align-item
 
 <footer>
   <div class="f-name">Anushka Tiwari</div>
-  <div class="f-info">Full-Stack Developer · AI/ML Engineer · Delhi · 2027</div>
+  <div class="f-info">Full-Stack Developer · AI/ML Engineer · Delhi NCR · Open to Work</div>
 </footer>
 
 <script>
-// Scroll reveal
 const els = document.querySelectorAll('.r');
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, {threshold: 0.1});
 els.forEach(el => io.observe(el));
 
-// Nav underline on scroll
 window.addEventListener('scroll', () => {
   document.querySelector('nav').style.boxShadow = window.scrollY > 10 ? '0 1px 0 0 #e4e2dd' : 'none';
 });
